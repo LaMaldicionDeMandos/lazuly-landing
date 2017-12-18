@@ -122,7 +122,48 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Registrarse</h2>
-            <h3 class="section-subheading text-muted">Poner aqui el formulario</h3>
+            <h3 class="section-subheading text-muted">Aquí podes registrarte y probar Lázuly.</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <form id="registerForm" name="sentRegistration" novalidate>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" id="school_name" type="text" placeholder="Nombre de tu Escuela *" required data-validation-required-message="Por favor ingresá el nombre de tu escuela.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="first_name" type="text" placeholder="Nombre *" required data-validation-required-message="Por favor ingresá tu nombre.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="last_name" type="text" placeholder="Apellido *" required data-validation-required-message="Por favor ingresá tu apellido.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" id="email" type="email" placeholder="Tu email *" required data-validation-required-message="Por favor ingresá tu email.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="password" type="password" placeholder="contraseña *" required data-validation-required-message="Por favor ingresá tu contraseña.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="re_password" type="password" placeholder="Vuele a ingresar la contraseña *" required data-validation-required-message="Por favor ingresá nuevamente tu contraseña." />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12 text-center">
+                  <div id="successRegistration"></div>
+                  <button id="registrationButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Registrarse</button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -133,8 +174,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Contact Us</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h2 class="section-heading text-uppercase">Contactanos</h2>
+            <h3 class="section-subheading text-muted">Si queres saber más podes enviarnos un mensaje y te responderemos a la brevedad.</h3>
           </div>
         </div>
         <div class="row">
@@ -143,28 +184,28 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input class="form-control" id="name" type="text" placeholder="Your Name *" required data-validation-required-message="Please enter your name.">
+                    <input class="form-control" id="name" type="text" placeholder="Nombre completo *" required data-validation-required-message="Por favor ingresá tu nombre.">
                     <p class="help-block text-danger"></p>
                   </div>
                   <div class="form-group">
-                    <input class="form-control" id="email" type="email" placeholder="Your Email *" required data-validation-required-message="Please enter your email address.">
+                    <input class="form-control" id="contactEmail" type="email" placeholder="Tu email *" required data-validation-required-message="Por favor ingresá tu email.">
                     <p class="help-block text-danger"></p>
                   </div>
                   <div class="form-group">
-                    <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required data-validation-required-message="Please enter your phone number.">
+                    <input class="form-control" id="phone" type="text" placeholder="Tu escuela *" required data-validation-required-message="Por favor ingresá tu escuela.">
                     <p class="help-block text-danger"></p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <textarea class="form-control" id="message" placeholder="Your Message *" required data-validation-required-message="Please enter a message."></textarea>
+                    <textarea class="form-control" id="message" placeholder="Tu Mensaje *" required data-validation-required-message="Por favor ingresá tu mensaje."></textarea>
                     <p class="help-block text-danger"></p>
                   </div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-lg-12 text-center">
                   <div id="success"></div>
-                  <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
+                  <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Enviar</button>
                 </div>
               </div>
             </form>
@@ -178,7 +219,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <span class="copyright">Copyright &copy; Your Website 2017</span>
+            <span class="copyright">Copyright &copy; Lázuly 2018</span>
           </div>
           <div class="col-md-4">
             <ul class="list-inline social-buttons">
@@ -202,10 +243,7 @@
           <div class="col-md-4">
             <ul class="list-inline quicklinks">
               <li class="list-inline-item">
-                <a href="#">Privacy Policy</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Terms of Use</a>
+                <a href="#">Términos y condiciones</a>
               </li>
             </ul>
           </div>
