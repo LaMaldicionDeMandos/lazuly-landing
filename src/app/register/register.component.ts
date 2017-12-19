@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { Registration } from './registration';
 import { RegistrationService } from '../registration.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'lazuly-register',
@@ -24,7 +25,7 @@ export class RegisterComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(() => {
-      window.location.href = 'http://localhost/#login';
+      window.location.href = environment.lazuly_uri;
     });
   }
 
@@ -32,7 +33,7 @@ export class RegisterComponent implements OnInit {
     this.resetErrors();
     if (this.validateAll()) {
       this.registerService.register(this.registration).subscribe(
-        (data) => this.openDialog(),//window.location.href = 'http://www.google.com',
+        (data) => this.openDialog(),
         (error) => console.log(`Error: ${JSON.stringify(error)}`));
     }
   }

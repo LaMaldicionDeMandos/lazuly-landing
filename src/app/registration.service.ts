@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {Observable} from "rxjs";
 
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 import { Registration} from './register/registration';
-import {Observable} from "rxjs";
 
 @Injectable()
 export class RegistrationService {
 
-  private url = 'http://localhost:5000/landing/register';
+  private url = `${environment.api_uri}/landing/register`;
 
   constructor(private http:HttpClient) { }
 
