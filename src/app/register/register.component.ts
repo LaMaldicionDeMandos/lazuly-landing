@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Registration } from './registration';
 import { RegistrationService } from '../registration.service';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'lazuly-register',
@@ -12,13 +13,28 @@ export class RegisterComponent implements OnInit {
   registration = new Registration();
   errors = {};
 
-  constructor(private registerService: RegistrationService) { }
+  constructor(private registerService: RegistrationService, private dialog: MatDialog) { }
 
   ngOnInit() {}
 
+  openDialog(): void {
+    let dialogRef = this.dialog.open(CongratsDialog, {
+      width: '400px',
+      data: this.registration
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      window.location.href = 'http://localhost/#login';
+    });
+  }
+
   register(): void {
     this.resetErrors();
-    if (this.validateAll()) this.registerService.register(this.registration);
+    if (this.validateAll()) {
+      this.registerService.register(this.registration).subscribe(
+        (data) => this.openDialog(),//window.location.href = 'http://www.google.com',
+        (error) => console.log(`Error: ${JSON.stringify(error)}`));
+    }
   }
 
   private resetErrors() {
@@ -71,6 +87,22 @@ export class RegisterComponent implements OnInit {
       return false;
     }
     return true;
+  }
+
+}
+
+@Component({
+  selector: 'congrats-dialog',
+  templateUrl: '../congrats-dialog.html',
+})
+export class CongratsDialog {
+
+  constructor(
+    public dialogRef: MatDialogRef<CongratsDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
+
+  onOkClick(): void {
+    this.dialogRef.close();
   }
 
 }

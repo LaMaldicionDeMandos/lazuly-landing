@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 import { Registration} from './register/registration';
+import {Observable} from "rxjs";
 
 @Injectable()
 export class RegistrationService {
@@ -11,11 +12,9 @@ export class RegistrationService {
 
   constructor(private http:HttpClient) { }
 
-  register(registration: Registration) {
+  register(registration: Registration):Observable<any> {
     console.log(JSON.stringify(registration));
-    this.http.post(this.url, registration).subscribe(
-      (data) => console.log(`Response: ${JSON.stringify(data)}`),
-      (error) => console.log(`Error: ${JSON.stringify(error)}`));
+    return this.http.post(this.url, registration);
   }
 
 }
