@@ -7,13 +7,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { RegisterComponent, CongratsDialog } from './register/register.component';
+import { ContactComponent, ContactDialog } from './contact/contact.component';
+
 import { RegistrationService} from './registration.service';
+import { ContactService} from './contact.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    CongratsDialog
+    ContactComponent,
+    CongratsDialog,
+    ContactDialog
   ],
   imports: [
     BrowserModule,
@@ -22,8 +27,8 @@ import { RegistrationService} from './registration.service';
     HttpClientModule,
     MatDialogModule
   ],
-  providers: [ RegistrationService ],
+  providers: [ RegistrationService, ContactService ],
   bootstrap: [AppComponent],
-  entryComponents: [CongratsDialog]
+  entryComponents: [CongratsDialog, ContactDialog ]
 })
 export class AppModule { }

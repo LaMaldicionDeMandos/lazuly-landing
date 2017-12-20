@@ -24,8 +24,7 @@
       ],
       "scripts": [
         "vendor/jquery/jquery.min.js", "vendor/bootstrap/js/bootstrap.bundle.min.js",
-        "vendor/jquery-easing/jquery.easing.min.js", "js/jqBootstrapValidation.js", "js/contact_me.js",
-        "js/agency.min.js"
+        "vendor/jquery-easing/jquery.easing.min.js", "js/jqBootstrapValidation.js", "js/agency.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
