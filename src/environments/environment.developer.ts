@@ -1,5 +1,5 @@
 export const environment = {
-  production: true,
-  lazuly_uri: 'http://localhost:8080/#login',
+  production: false,
+  lazuly_uri: 'http://localhost:4201',
   api_uri: 'http://localhost:5000'
 };
